@@ -53,6 +53,10 @@ yt-dlp -f "bv*" <видео_линк>
 
 yt-dlp -f "bestaudio" --extract-audio --audio-format mp3 <видео_линк>
 
+## Изтегляне само на MP4 видео (ако трябва конкретен формат)
+
+yt-dlp -f "bv*[ext=mp4]" <видео_линк>
+
 ## Списък с всички налични формати
 
 yt-dlp --list-formats <видео_линк>
