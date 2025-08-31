@@ -37,6 +37,10 @@ yt-dlp
 
 yt-dlp "URL"
 
+## Изтегляне на YouTube playlist
+
+yt-dlp -f "bestvideo+bestaudio/best" --merge-output-format mp4 --output "%(playlist_index)s - %(title)s.%(ext)s" <URL_на_плейлиста>
+
 ## Най-добро комбинирано изтегляне на видео и аудио
 
 yt-dlp -f "bv*+ba/best" <video_url>
