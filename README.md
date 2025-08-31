@@ -15,6 +15,15 @@ ffmpeg -i bg.mkv -i bg.srt -map 0 -map 1:s:0 -c copy -metadata:s:s:1 language=bu
 
 ffmpeg -i bg.mkv -c copy -map 0 -segment_time 00:15:00 -f segment -reset_timestamps 1 bg%03d.mkv
 
+## Извличане на аудио без повторно кодиране (по-бързо)
+
+ffmpeg -i video.mp4 -vn -acodec copy audio.aac
+
+## Извличане с конвертиране в MP3
+
+ffmpeg -i video.mp4 -q:a 0 -map a audio.mp3
+
+
 # yt-dlp
 yt-dlp
 
