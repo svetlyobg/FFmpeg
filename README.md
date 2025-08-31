@@ -34,4 +34,6 @@ yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" <видео_линк>
 
 ## Само аудио (например за музика)
 
+yt-dlp -f "bestaudio" --extract-audio --audio-format mp3 <видео_линк>
+
 
