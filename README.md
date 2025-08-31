@@ -1,6 +1,8 @@
 # FFmpeg
 FFmpeg
 
+[Изтегли](https://www.ffmpeg.org/download.html#build-windows)
+
 ## Конвериране на видео от mp4 към mkv
 
 ffmpeg -i bg.mp4 -c copy -map_metadata 0 bg.mkv
@@ -12,3 +14,12 @@ ffmpeg -i bg.mkv -i bg.srt -map 0 -map 1:s:0 -c copy -metadata:s:s:1 language=bu
 ## Разделяне на видео на 15 минутни сегменти
 
 ffmpeg -i bg.mkv -c copy -map 0 -segment_time 00:15:00 -f segment -reset_timestamps 1 bg%03d.mkv
+
+# yt-dlp
+yt-dlp
+
+[Изтегли](https://github.com/yt-dlp/yt-dlp/releases)
+
+## Изтегляне на видео
+
+yt-dlp "URL"
