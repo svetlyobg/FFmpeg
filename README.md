@@ -23,6 +23,10 @@ ffmpeg -i video.mp4 -vn -acodec copy audio.aac
 
 ffmpeg -i video.mp4 -q:a 0 -map a audio.mp3
 
+## Извличане на част от аудиото (по време)
+
+ffmpeg -i video.mp4 -ss 00:01:00 -t 00:00:30 -q:a 0 -map a clip.mp3
+
 
 # yt-dlp
 yt-dlp
