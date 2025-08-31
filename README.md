@@ -27,6 +27,14 @@ ffmpeg -i video.mp4 -q:a 0 -map a audio.mp3
 
 ffmpeg -i video.mp4 -ss 00:01:00 -t 00:00:30 -q:a 0 -map a clip.mp3
 
+## Изпозлване на видеокарта Nvidia
+
+ffmpeg -i input.mp4 -c:v h264_nvenc -preset p5 -b:v 5M -c:a copy output_h264_nvenc.mp4
+
+ffmpeg -i input.mp4 -c:v hevc_nvenc -preset p5 -b:v 3M -c:a copy output_hevc_nvenc.mp4
+
+ffmpeg -hwaccel cuvid -c:v h264_cuvid -i input.mp4 -c:v h264_nvenc -preset p5 -b:v 5M -c:a copy output_gpu_decode_encode.mp4
+
 
 # yt-dlp
 yt-dlp
@@ -36,6 +44,16 @@ yt-dlp
 ## Изтегляне на видео
 
 yt-dlp "URL"
+
+## Изпозлване на видеокарта Nvidia
+
+yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a] <URL>
+
+ffmpeg -i "изтеглено_видео.mp4" -i "изтеглено_аудио.m4a" -c:v h264_nvenc -preset p5 -b:v 5M -c:a aac -b:a 192k final_video.mp4
+
+```
+--postprocessor-args "-c:v h264_nvenc -preset p5 -b:v 5M -c:a copy": Тези аргументи се предават на FFmpeg. Тук казваме на FFmpeg да прекодира видеото с h264_nvenc и да копира аудиото.
+```
 
 ## Изтегляне на YouTube playlist
 
