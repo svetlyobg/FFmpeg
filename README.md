@@ -35,6 +35,11 @@ ffmpeg -i input.mp4 -c:v hevc_nvenc -preset p5 -b:v 3M -c:a copy output_hevc_nve
 
 ffmpeg -hwaccel cuvid -c:v h264_cuvid -i input.mp4 -c:v h264_nvenc -preset p5 -b:v 5M -c:a copy output_gpu_decode_encode.mp4
 
+## Извличане на всички кадри
+
+ffmpeg.exe -i .\bg.mkv bg%3d.jpg
+
+***
 
 # yt-dlp
 yt-dlp
