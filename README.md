@@ -88,3 +88,6 @@ yt-dlp -f "bv*[ext=mp4]" <видео_линк>
 
 yt-dlp --list-formats <видео_линк>
 
+# Exiftool
+
+exiftool -all= file.extention
