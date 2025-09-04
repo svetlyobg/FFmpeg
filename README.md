@@ -7,6 +7,10 @@ FFmpeg
 
 ffmpeg -i bg.mp4 -c copy -map_metadata 0 bg.mkv
 
+## Експортиране на част от видеофайл между 54-та и 59-та минута
+
+ffmpeg -i bg.mp4 -ss 00:54:00 -to 00:59:00 -c copy bg_54_59.mp4
+
 ## Вграждане на български субтитри
 
 ffmpeg -i bg.mkv -i bg.srt -map 0 -map 1:s:0 -c copy -metadata:s:s:1 language=bul -metadata:s:s:1 title="Bulgarian Subtitles (SRT)" bg_subs.mkv
