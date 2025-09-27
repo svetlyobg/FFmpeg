@@ -27,6 +27,10 @@ ffmpeg -i video.mp4 -vn -acodec copy audio.aac
 
 ffmpeg -i video.mp4 -q:a 0 -map a audio.mp3
 
+## Конвериране към AAC/M4A формат за iOS
+
+ffmpeg -i "ВИДЕО.mp4" -vn -c:a alac -map_chapters 0 -map_metadata 0 "ВИДЕО.m4a"
+
 ## Извличане на част от аудиото (по време)
 
 ffmpeg -i video.mp4 -ss 00:01:00 -t 00:00:30 -q:a 0 -map a clip.mp3
