@@ -68,6 +68,10 @@ ffmpeg -i "изтеглено_видео.mp4" -i "изтеглено_аудио.
 
 yt-dlp -f "bestvideo+bestaudio/best" --merge-output-format mp4 --output "%(playlist_index)s - %(title)s.%(ext)s" <URL_на_плейлиста>
 
+## Изтегляне на YouTube MP4 видео с вграждане на метаданни
+
+yt-dlp -f "bestvideo+bestaudio/best" --embed-thumbnail --embed-metadata --add-metadata --parse-metadata "%(uploader)s:%(artist)s" --postprocessor-args "-metadata comment='Downloaded with yt-dlp'" --output "%(uploader)s - %(title)s (%(id)s).%(ext)s" --recode-video mp4 "URL"
+
 ## Най-добро комбинирано изтегляне на видео и аудио
 
 yt-dlp -f "bv*+ba/best" <video_url>
