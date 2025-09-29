@@ -1,5 +1,5 @@
 # FFmpeg
-FFmpeg
+FFmpeg | yt-dlp | Exiftool
 
 [Изтегли](https://www.ffmpeg.org/download.html#build-windows)
 
@@ -74,7 +74,7 @@ yt-dlp -f "bestvideo+bestaudio/best" --merge-output-format mp4 --output "%(playl
 
 ## Изтегляне на YouTube MP4 видео с вграждане на метаданни
 
-yt-dlp -f "bestvideo+bestaudio/best" --embed-thumbnail --embed-metadata --add-metadata --parse-metadata "%(uploader)s:%(artist)s" --postprocessor-args "-metadata comment='Downloaded with yt-dlp'" --output "%(uploader)s - %(title)s (%(id)s).%(ext)s" --recode-video mp4 "URL"
+yt-dlp -f "bestvideo+bestaudio/best" --embed-thumbnail --embed-metadata --add-metadata --parse-metadata "%(uploader)s:%(artist)s" --postprocessor-args "-metadata comment='Downloaded with yt-dlp'" --output "%(uploader)s - %(title)s (%(id)s).%(ext)s" --recode-video mp4 <видео_линк>
 
 ## Най-добро комбинирано изтегляне на видео и аудио
 
@@ -99,6 +99,10 @@ yt-dlp -f "bv*[ext=mp4]" <видео_линк>
 ## Списък с всички налични формати
 
 yt-dlp --list-formats <видео_линк>
+
+## Изтегляне на специфична част от видео
+
+yt-dlp -f "(bestvideo+bestaudio/best)[protocol!*=dash]" --external-downloader ffmpeg --external-downloader-args "ffmpeg_i:-ss 00:43:16.00 -to 01:05:00.00" <видео_линк>
 
 # Exiftool
 
