@@ -80,6 +80,10 @@ yt-dlp -f "bestvideo+bestaudio/best" --embed-thumbnail --embed-metadata --add-me
 
 yt-dlp -f "bv*+ba/best" <video_url>
 
+## Изтегляне на видео със спецефично име
+
+yt-dlp -o "NAME.%(ext)s" "URL"
+
 ## Най-добър MP4 формат (широко съвместим)
 
 yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" <видео_линк>
