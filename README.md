@@ -3,6 +3,10 @@ FFmpeg | yt-dlp | Exiftool
 
 [Изтегли](https://www.ffmpeg.org/download.html#build-windows)
 
+## Конвериране на видео от mkv към mp4
+
+ffmpeg -i 1.mkv -c:v libx264 -c:a aac 1.mp4
+
 ## Конвериране на видео от mp4 към mkv
 
 ffmpeg -i bg.mp4 -c copy -map_metadata 0 bg.mkv
