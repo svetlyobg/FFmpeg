@@ -57,6 +57,10 @@ ffmpeg -i input.mkv -c:v libvpx-vp9 -crf 40 -vf -an webm.webm
 ffmpeg -i input.mkv -c:v libx264 -crf 24 -vf -movflags faststart -an h264.mp4
 ffmpeg -i input.mkv -c:v libx265 -crf 28 -vf -tag:v hvc1 -movflags faststart -an h265.mp4
 
+## Комбиниране на аудио и картина във видео
+
+ffmpeg -i audio.wav -i image.png -c:v libx265 -crf 28 -b:a 192k output.mp4
+
 ***
 
 # yt-dlp
