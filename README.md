@@ -51,6 +51,12 @@ ffmpeg -hwaccel cuvid -c:v h264_cuvid -i input.mp4 -c:v h264_nvenc -preset p5 -b
 
 ffmpeg.exe -i .\bg.mkv bg%3d.jpg
 
+## Оптимизиране за уеб
+
+ffmpeg -i input.mkv -c:v libvpx-vp9 -crf 40 -vf -an webm.webm
+ffmpeg -i input.mkv -c:v libx264 -crf 24 -vf -movflags faststart -an h264.mp4
+ffmpeg -i input.mkv -c:v libx265 -crf 28 -vf -tag:v hvc1 -movflags faststart -an h265.mp4
+
 ***
 
 # yt-dlp
